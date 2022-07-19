@@ -6,6 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        '4xl': '2.5rem',
+        'base': '1.125',
+      },
       colors: {
         blue: {
           '800': '#091C45',
