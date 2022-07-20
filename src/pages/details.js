@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Faq from '../components/faq'
 
 export default function Details() {
     return (
@@ -25,8 +26,9 @@ export default function Details() {
                     <br></br>
                     <a className='bg-blue-400 font-bold px-16 py-4 my-6 text-white-100' href='/'>View Course</a>
                 </section>
-                <section className='pt-12'>
+                <section className='py-12'>
                     <h2>Frequently Asked Questions</h2>
+                    <Faq />
                 </section>
             </main>
             <aside className='max-w-xl'>
