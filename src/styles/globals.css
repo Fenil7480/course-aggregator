@@ -26,6 +26,10 @@ h3 {
   @apply text-xl lg:text-2xl font-bold leading-relaxed lg:leading-loose;
 }
 
+.customFont {
+  font-family: "Audiowide", cursive;
+}
+
 a {
   color: inherit;
   font-family: "Audiowide", cursive;
