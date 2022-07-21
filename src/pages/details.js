@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Faq from '../components/faq'
+import Header from '../components/Header'
 
 export default function Details() {
     return (
@@ -9,7 +10,7 @@ export default function Details() {
             <meta name="description" content="Details page of course." />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <header className='bg-blue-800 text-white-100 container mx-auto px-8 lg:px-16'>
+        <Header>
             <div className='py-12'>
                 <h1>Course Title</h1>
                 <p>Rating | Author</p>
@@ -17,7 +18,7 @@ export default function Details() {
                 <br></br>
                 <a className='bg-blue-400 font-bold px-16 py-4 my-6' href='/'>View Course</a>
             </div>
-        </header>
+        </Header>
         <div className='flex flex-1 flex-col-reverse md:flex-row container mx-auto px-8 lg:px-16'>
             <main className='max-w-3xl'>
                 <section className='pt-12'>
