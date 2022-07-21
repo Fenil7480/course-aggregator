@@ -7,8 +7,6 @@ import {
     AccordionItemPanel,
 } from 'react-accessible-accordion';
 
-import '../styles/Faq.module.css'
-
 const Faq = () => {
     return (
         <>
