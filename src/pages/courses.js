@@ -21,7 +21,7 @@ const Courses = () => {
                     <option value='paid'>Paid</option>
                 </select>
             </div>
-            <div className='flex flex-wrap justify-center'>
+            <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 my-10'>
                 <CourseCard />
                 <CourseCard />
                 <CourseCard />
