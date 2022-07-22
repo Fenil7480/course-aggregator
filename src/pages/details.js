@@ -6,7 +6,7 @@ export default function Details() {
     return (
     <div>
         <Head>
-            <title>Web3suggest | Details</title>
+            <title>Web 3.0 A New Chapter | Details</title>
             <meta name="description" content="Details page of course." />
             <link rel="icon" href="/favicon.ico" />
         </Head>
