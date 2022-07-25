@@ -23,6 +23,7 @@ const coursesSchema = new mongoose.Schema({
     required: true,
   },
   rating: Double,
+  slug: String,
 });
 
 module.exports = mongoose.models.Courses || model("Courses", coursesSchema);
