@@ -39,7 +39,7 @@ const Nav = () => {
               <li>
                 <Link href="/">
                   <a
-                    className="font-semibold text-lg block py-2 pr-4 pl-3 text-white text-gray-700 bg-blue-700 rounded md:bg-transparent  md:hover:text-blue-700  md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent focus:text-blue-700"
+                    className="font-semibold text-lg block py-2 pr-4 pl-3 text-white text-gray-700 bg-blue-700 rounded md:bg-transparent  md:hover:text-blue-700  md:p-0  dark:bg-blue-600 md:dark:bg-transparent focus:text-blue-700"
                     aria-current="page"
                   >
                     HOME
