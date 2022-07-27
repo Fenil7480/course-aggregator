@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import { Schema, model, models } from "mongoose";
 
-const coursesSchema = new Schema({
+// const mongoose = require("mongoose");
+
+const coursesSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -21,7 +23,7 @@ const coursesSchema = new Schema({
     required: true,
   },
   rating: Double,
+  slug: String,
 });
 
-const Courses = models.Courses || model("Courses", coursesSchema);
-export default Courses;
+module.exports = mongoose.models.Courses || model("Courses", coursesSchema);
