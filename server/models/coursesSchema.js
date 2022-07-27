@@ -13,7 +13,7 @@ const coursesSchema = new mongoose.Schema({
     type: Double,
     required: true,
   },
-  Desription: String,
+  Description: String,
   Author: {
     type: String,
     required: true,

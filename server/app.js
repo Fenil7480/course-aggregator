@@ -11,10 +11,10 @@ mongoose.connect(dbURI, { dbName: "CourseDB" });
 
 // CONNECTION EVENTS
 mongoose.connection.on("connected", function () {
-  console.log("Connected to databse successfully!");
+  console.log("Connected to database successfully!");
 });
 mongoose.connection.on("error", function (err) {
   console.log("Mongoose connection error: " + err);
 });
 
-app.listen(3000, console.log("Server started"));
+app.listen(3004, console.log("Server started"));
