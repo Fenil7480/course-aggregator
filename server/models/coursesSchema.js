@@ -10,7 +10,7 @@ const coursesSchema = new mongoose.Schema({
   },
   technology: [],
   price: {
-    type: Double,
+    type: Number,
     required: true,
   },
   Description: String,
@@ -22,7 +22,7 @@ const coursesSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  rating: Double,
+  rating: Number,
   slug: String,
 });
 
