@@ -8,13 +8,28 @@ var mongoose = require("mongoose");
 const dbURI =
   "mongodb+srv://admin:admin@saniyacluster.xrzit.mongodb.net/CourseDB?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { dbName: "CourseDB" });
+//ishu added
+require('./models/coursesSchema');
 
 // CONNECTION EVENTS
 mongoose.connection.on("connected", function () {
-  console.log("Connected to databse successfully!");
+  console.log("Connected to database successfully!");
 });
 mongoose.connection.on("error", function (err) {
   console.log("Mongoose connection error: " + err);
 });
 
-app.listen(3000, console.log("Server started"));
+<<<<<<< HEAD
+app.listen(3004, console.log("Server started"));
+=======
+//Ishu added
+const apiRouter= require('./routes/index');
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,PUT');
+  next();
+ });
+ app.use('/api', apiRouter);
+app.listen(4000, console.log("Server started"));
+>>>>>>> 99892b12041fcc432bf801d48ca36025c6125ec4
