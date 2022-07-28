@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
-import { Schema, model, models } from "mongoose";
+// import mongoose from "mongoose";
+// import { Schema, model, models } from "mongoose";
+const mongoose = require('mongoose')
 
 // const mongoose = require("mongoose");
 
@@ -26,4 +27,5 @@ const coursesSchema = new mongoose.Schema({
   slug: String,
 });
 
-module.exports = mongoose.models.Courses || model("Courses", coursesSchema);
+// module.exports = mongoose.models.Courses || model("Courses", coursesSchema);
+mongoose.model("Courses", coursesSchema);
