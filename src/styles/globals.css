@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-  @apply text-xl lg:text-2xl font-bold leading-relaxed lg:leading-loose font-cursive;
+  @apply text-xl lg:text-2xl font-bold leading-relaxed lg:leading-loose;
 }
 
 /* .customFont {
@@ -80,4 +80,9 @@ a {
 .accordion__panel {
   padding: 20px;
   animation: fadein 0.35s ease-in;
+}
+
+/* courseCard */
+.hoverCard:hover .card-image {
+  @apply scale-110 duration-300;
 }
