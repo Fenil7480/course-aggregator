@@ -1,7 +1,8 @@
 const Footer = () => {
   return (
     <>
-      <footer className="p-4 bg-white mx-auto flex flex-wrap justify-center md:justify-between ">
+      content: "";
+      <footer className=" p-4 bg-white mx-auto flex flex-wrap justify-center md:justify-between ">
         <p className="customFont font-normal text-lg block py-2 pr-4 pl-3 text-white rounded text-gray-700 md:p-0 sm:text-center  ">
           &copy; WEB3.0 2022
         </p>
