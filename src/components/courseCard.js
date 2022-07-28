@@ -1,20 +1,27 @@
 import React from 'react'
 import Link from 'next/link'
 
-const CourseCard = () => {
+const CourseCard = (props) => {
+    const dummy = {
+        title: 'Ethereum developer bootcamp',
+        author: 'web3.university',
+        price: 'Free',
+        technology: ["Cryptography","Etherem","Solidity","Decentralized Applications"],
+    }
     return (
-        <div className='flex flex-col bg-blue-300 rounded-tr-3xl overflow-hidden'>
-            <Link href="./details" target="_blank" rel="noopener noreferrer">
-                <img className='rounded-tr-3xl hover:scale-110 each-out duration-300 cursor-pointer' src="https://assets-global.website-files.com/6171e9fea621c60456b9f9ad/6279914cc3535506b7dff479_nft.png" alt="nft" />
-            </Link>
-            <div className='flex flex-col m-3'>
-                <h3 className='leading-9 text-xl'>How to build your first NFT</h3>
-                <div className='flex justify-between text-sm'>
-                    <h5 className='text-blue-600 mt-5'><span className='bg-blue-400 py-1 px-1.5 rounded-md'>NFT</span>&nbsp;&nbsp;&nbsp;<span className='bg-blue-400 py-1 px-1.5 rounded-md'>Solidity</span></h5>
-                    <p className='text-lg mt-4'>FREE</p>
+        <Link href="./details" target="_blank" rel="noopener noreferrer">
+            <div className='hoverCard flex flex-col bg-white-100 rounded-3xl overflow-hidden cursor-pointer drop-shadow-md hover:drop-shadow-lg duration-300'>
+                <div className='overflow-hidden relative bg-blue-600'>
+                    <img className='card-image rounded-tr-3xl opacity-50' src="interface/pattern.svg" alt="Patterned background for course card" />
+                    <p className='p-4 font-bold text-white-100 absolute bottom-0 text-lg sm:text-xl leading-relaxed sm:leading-relaxed'>{dummy.technology.map((val, index) => index > 0 ? `, ${val}` : val)}</p>
                 </div>
-            </div>
-        </div >
+                <div className='flex flex-col px-4'>
+                    <h3 className=''>{dummy.title}</h3>
+                    <p className=''>{dummy.author}</p>
+                    <p className='text-2xl pt-3 pb-6'>{dummy.price}</p>
+                </div>
+            </div >
+        </Link>
     )
 }
 

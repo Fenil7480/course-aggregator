@@ -1,8 +1,5 @@
 // import mongoose from "mongoose";
 // import { connect } from "mongoose";
-// import { parse } from "node-html-parser";
-// require("./models/coursesSchema");
-// import courseSchema from "./models/coursesSchema";
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -21,9 +18,6 @@ mongoose.connection.on("error", function (err) {
   console.log("Mongoose connection error: " + err);
 });
 
-// <<<<<<< HEAD
-// app.listen(3000, console.log("Server started"));
-// =======
 //Ishu added
 const apiRouter = require("./routes/index");
 app.use("/api", (req, res, next) => {
@@ -36,5 +30,4 @@ app.use("/api", (req, res, next) => {
   next();
 });
 app.use("/api", apiRouter);
-app.listen(3000, console.log("Server started"));
-// >>>>>>> 99892b12041fcc432bf801d48ca36025c6125ec4
+app.listen(4000, console.log("Server started"));

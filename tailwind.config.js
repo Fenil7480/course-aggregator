@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
+        'cursive': ['Audiowide', 'cursive'],
       },
       fontSize: {
         '4xl': '2.5rem',
