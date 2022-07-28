@@ -1,12 +1,8 @@
 // import mongoose from "mongoose";
-// <<<<<<< HEAD
-import { Schema, model, models } from "mongoose";
-// =======
 // import { Schema, model, models } from "mongoose";
 const mongoose = require("mongoose");
-// >>>>>>> e199d9e6ed7ab0f9b17485bef96793c57fc0a617
 
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 const coursesSchema = new mongoose.Schema({
   title: {

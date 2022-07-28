@@ -1,5 +1,3 @@
-// import mongoose from "mongoose";
-// import { connect } from "mongoose";
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -9,7 +7,8 @@ const dbURI =
   "mongodb+srv://admin:admin@saniyacluster.xrzit.mongodb.net/CourseDB?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { dbName: "CourseDB" });
 //ishu added
-// require("./models/coursesSchema");
+require("./models/coursesSchema");
+
 // CONNECTION EVENTS
 mongoose.connection.on("connected", function () {
   console.log("Connected to database successfully!");
