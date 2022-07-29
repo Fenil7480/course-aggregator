@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Faq from '../components/faq'
 import Header from '../components/Header'
+import Button from '../components/button'
 
 export default function Details() {
     return (
@@ -16,7 +17,7 @@ export default function Details() {
                 <p>Rating | Author</p>
                 <p className='text-xl'>Price</p>
                 <br></br>
-                <a className='bg-blue-400 font-bold px-16 py-4 my-6' href='/'>View Course</a>
+                <a href='/'><Button>View Course</Button></a>
             </div>
         </Header>
         <div className='flex flex-1 flex-col-reverse md:flex-row container mx-auto px-8 lg:px-16'>
@@ -25,7 +26,7 @@ export default function Details() {
                     <h2>Description</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et congue velit, ac placerat velit. Suspendisse tristique dui at nunc pellentesque iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed bibendum rhoncus nibh vel sollicitudin. Cras finibus accumsan urna, et ultricies massa scelerisque a. Donec eget lectus tristique sem rhoncus egestas. Donec auctor augue pretium turpis varius sodales. Etiam sollicitudin ipsum nec lacus consequat, nec lacinia dolor sagittis. Nulla et interdum risus. Proin facilisis ante nec odio sollicitudin placerat.</p>
                     <br></br>
-                    <a className='bg-blue-400 font-bold px-16 py-4 my-6 text-white-100' href='/'>View Course</a>
+                    <a href='/'><Button>View Course</Button></a>
                 </section>
                 <section className='py-12'>
                     <h2>Frequently Asked Questions</h2>
