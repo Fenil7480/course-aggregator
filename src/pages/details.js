@@ -12,14 +12,12 @@ export default function Details() {
             <meta name="description" content="Details page of course." />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Header>
-            <Container className='py-12'>
+        <Header blue>
                 <h1>Course Title</h1>
                 <p>Rating | Author</p>
                 <p className='text-xl'>Price</p>
                 <br></br>
                 <a href='/'><Button>View Course</Button></a>
-            </Container>
         </Header>
         <Container>
             <div className='flex flex-1 flex-col-reverse md:flex-row container'>

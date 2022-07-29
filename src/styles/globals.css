@@ -70,13 +70,13 @@ a {
   height: 10px;
   float: right;
 
-  //width: 100%;
+  /* //width: 100%; */
   margin-left: 12px;
   font-size: 1.5em;
 
-  //border: 2px solid currentColor;
-  //border-right: 2px solid currentColor;
-  //transform: rotate(0deg);
+  /* //border: 2px solid currentColor; */
+  /* //border-right: 2px solid currentColor; */
+  /* //transform: rotate(0deg); */
 }
 
 .accordion__button[aria-expanded="true"]::after,
@@ -98,4 +98,10 @@ a {
 /* courseCard */
 .hoverCard:hover .card-image {
   @apply scale-110 duration-300;
+}
+
+header {
+  background: url('../../public/interface/squares.svg') no-repeat;
+  background-position: 20% 20%;
+  background-size: 150px;
 }
