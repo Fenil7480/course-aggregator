@@ -4,13 +4,14 @@
 import styles from "../styles/Home.module.css";
 import FeaturedCourses from "../components/featuredCourses";
 import Banner from "../components/banner";
+import Container from '../components/container';
 
 // import AboutPartHome from '../components/AboutPartHome';
 // import Carousal from '../components/Carousal';
 
 export default function Home() {
   return (
-    <div className="w-10/12 m-auto">
+    <Container>
       <div className="App">
         {/* <Carousal /> */}
         {/*Features part start*/}
@@ -24,6 +25,6 @@ export default function Home() {
         <FeaturedCourses />
         {/*Card for courses end*/}
       </div>
-    </div>
+    </Container>
   );
 }

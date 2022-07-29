@@ -1,9 +1,10 @@
 import React from 'react'
 import CourseCard from '../components/courseCard'
+import Container from '../components/container'
 
 const Courses = ({posts}) => {
     return (
-        <div className='w-10/12 m-auto'>
+        <Container>
             <div className='flex justify-center text-2xl my-5 mt-10 space-x-24'>
                 <div className='flex justify-between'>
                     <label>Filter technology:  </label>
@@ -26,7 +27,7 @@ const Courses = ({posts}) => {
                     (<CourseCard content={post} />)
                 )}
             </div>
-        </div>
+        </Container>
     )
 }
 
