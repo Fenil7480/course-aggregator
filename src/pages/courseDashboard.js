@@ -1,7 +1,7 @@
 import React from 'react'
 import CourseRow from '../components/courseRow'
 
-const CourseDashboard = () => {
+const CourseDashboard = ({ courses }) => {
     return (
         <div className='flex w-10/12 flex-col justify-center m-auto my-5'>
             <div className='flex justify-between'>
@@ -21,16 +21,25 @@ const CourseDashboard = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <CourseRow />
-                        <CourseRow />
-                        <CourseRow />
-                        <CourseRow />
-                        <CourseRow />
+                        {courses.map((course) => (
+                            <CourseRow key={course.id} name={course.title} />
+                        ))}
                     </tbody>
                 </table>
             </div>
         </div>
     )
+}
+
+export async function getStaticProps() {
+    const res = await fetch('http://localhost:4000/api/courses')
+    const posts = await res.json()
+    console.log(posts);
+    return {
+        props: {
+            courses: posts
+        },
+    }
 }
 
 export default CourseDashboard
