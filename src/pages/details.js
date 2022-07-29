@@ -26,7 +26,7 @@ export default function Details() {
                     <h2>Description</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et congue velit, ac placerat velit. Suspendisse tristique dui at nunc pellentesque iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed bibendum rhoncus nibh vel sollicitudin. Cras finibus accumsan urna, et ultricies massa scelerisque a. Donec eget lectus tristique sem rhoncus egestas. Donec auctor augue pretium turpis varius sodales. Etiam sollicitudin ipsum nec lacus consequat, nec lacinia dolor sagittis. Nulla et interdum risus. Proin facilisis ante nec odio sollicitudin placerat.</p>
                     <br></br>
-                    <a className='bg-blue-400 font-bold px-16 py-4 my-6 text-white-100' href='/'>View Course</a>
+                    <a href='/'><Button>View Course</Button></a>
                 </section>
                 <section className='py-12'>
                     <h2>Frequently Asked Questions</h2>
