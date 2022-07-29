@@ -10,9 +10,10 @@ export default function Details() {
             <meta name="description" content="FAQs about Web3" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Header>
+        <Header blue>
             <div className='py-12'>
                 <h1>Frequently Asked Questions</h1>
+                <p className='text-xl mb-8'>Learn more about Web3 with our FAQ section.</p>
             </div>
         </Header>
         <div className='container mx-auto px-8 lg:px-16'>

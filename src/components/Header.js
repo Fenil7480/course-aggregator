@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Header = ({children}) => {
+const Header = ({blue, children}) => {
+    
     return (
-        <header className='bg-blue-800 text-white-100 container mx-auto px-8 lg:px-16'>
+        <header className={`${blue ? "bg-blue-800 text-white-100" : "bg-white-100 text-black"} container relative mx-auto px-8 lg:px-16 text-center py-24`}>
             {children}
+            <div className={`headerDivider w-4/12 h-16 rounded-tl-full absolute right-0 bottom-0 ${blue ? "bg-white-100" : "bg-blue-800"}`}></div>
+            <img className='absolute bottom-0 right-6 h-32 w-auto' src='interface/squares2.svg' />
         </header>
     )
 }
