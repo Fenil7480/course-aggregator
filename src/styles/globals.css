@@ -29,8 +29,10 @@ h3 {
 
 a {
   color: inherit;
-  font-family: "Audiowide", cursive;
   text-decoration: none;
+}
+nav a {
+  @apply font-cursive;
 }
 
 * {
