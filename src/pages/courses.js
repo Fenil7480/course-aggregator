@@ -3,7 +3,7 @@ import CourseCard from '../components/courseCard'
 import Container from '../components/container'
 import Header from '../components/Header'
 
-const Courses = ({posts}) => {
+const Courses = ({courses}) => {
     return (
         <>
         <Header>
@@ -32,8 +32,8 @@ const Courses = ({posts}) => {
                     </select>
                 </div>
                 <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 my-10'>
-                    {posts.map((post, index) => 
-                        (<CourseCard content={post} />)
+                    {courses.map((course) => 
+                        (<CourseCard course={course} />)
                     )}
                 </div>
             </Container>
@@ -49,13 +49,13 @@ export async function getStaticProps() {
     // Call an external API endpoint to get posts.
     // You can use any data fetching library
     const res = await fetch('http://localhost:4000/api/courses')
-    const posts = await res.json()
+    const courses = await res.json()
   
     // By returning { props: { posts } }, the Blog component
     // will receive `posts` as a prop at build time
     return {
       props: {
-        posts,
+        courses,
       },
     }
   }
