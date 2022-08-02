@@ -1,5 +1,7 @@
 import React from 'react'
 import CourseRow from '../components/courseRow'
+import Link from "next/link";
+
 
 const CourseDashboard = ({ courses }) => {
     return (
@@ -21,9 +23,7 @@ const CourseDashboard = ({ courses }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {courses.map((course) => (
-                            <CourseRow key={course.id} name={course.title} />
-                        ))}
+                        {courses.map(course => <CourseRow key={course.id} {...course} />)}
                     </tbody>
                 </table>
             </div>
@@ -33,11 +33,10 @@ const CourseDashboard = ({ courses }) => {
 
 export async function getStaticProps() {
     const res = await fetch('http://localhost:4000/api/courses')
-    const posts = await res.json()
-    console.log(posts);
+    const courses = await res.json()
     return {
         props: {
-            courses: posts
+            courses
         },
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const AdminCourseAdd = ({ name, placeHolder }) => {
+const AdminCourseAdd = ({ name, placeHolder,value }) => {
   return (
     <div className="flex flex-col justify-center ">
       <label htmlFor="title" className="font-sans font-bold px-5 py-1">
@@ -11,6 +11,7 @@ const AdminCourseAdd = ({ name, placeHolder }) => {
         type="text"
         id="title"
         placeholder={placeHolder}
+        value={value}
       />
     </div>
   );
