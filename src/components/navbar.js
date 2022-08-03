@@ -23,6 +23,10 @@ const Nav = () => {
     mobileMenu.current.classList.remove("hidden");
   }
 
+  function closeMobileNav() {
+    mobileMenu.current.classList.add("hidden");
+  }
+
   return (
     <>
       <nav className="px-2 bg-white border-gray-200  shadow-lg ">
@@ -43,18 +47,13 @@ const Nav = () => {
             >
               <span className="sr-only">Open main menu</span>
               <svg
-                className="w-6 h-6"
                 aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
+                fill="black" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.5 24C39.5 23.1716 38.8284 22.5 38 22.5H10C9.17157 22.5 8.5 23.1716 8.5 24C8.5 24.8284 9.17157 25.5 10 25.5H38C38.8284 25.5 39.5 24.8284 39.5 24Z" fill="black"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.5 14C39.5 13.1716 38.8284 12.5 38 12.5H10C9.17157 12.5 8.5 13.1716 8.5 14C8.5 14.8284 9.17157 15.5 10 15.5H38C38.8284 15.5 39.5 14.8284 39.5 14Z" fill="black"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.5 34C39.5 33.1716 38.8284 32.5 38 32.5H10C9.17157 32.5 8.5 33.1716 8.5 34C8.5 34.8284 9.17157 35.5 10 35.5H38C38.8284 35.5 39.5 34.8284 39.5 34Z" fill="black"/>
               </svg>
+
             </button>
             <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
@@ -80,15 +79,17 @@ const Nav = () => {
                     return (
                       <li>
                         <Link href={link.link}>
-                          <a>{link.name}</a>
+                          <a onClick={closeMobileNav}>{link.name}</a>
                         </Link>
                       </li>
                     )
                   })}
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.9289 31.0711L31.071 16.929" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M16.9289 16.9289L31.071 31.071" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
+                  <button onClick={closeMobileNav}>
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.9289 31.0711L31.071 16.929" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M16.9289 16.9289L31.071 31.071" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </button>
                 </ul>
       </nav>
     </>
