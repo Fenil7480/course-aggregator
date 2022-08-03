@@ -49,7 +49,7 @@ const updatecourses=function(req,res)
         .exec((err, coursedata) => {
             if (!coursedata) {
                 res
-                    .stats(404)
+                    .status(404)
                     .json({
                         "message": "Courseid not found"
                     });
