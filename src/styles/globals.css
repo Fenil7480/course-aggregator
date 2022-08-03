@@ -110,4 +110,9 @@ header {
   .mobilehide {
     display: none;
   }
+  .mobilecolumn
+  {
+   flex-direction: column;
+  }
+
 }
