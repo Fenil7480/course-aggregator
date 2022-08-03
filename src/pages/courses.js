@@ -44,11 +44,11 @@ const Courses = ({ courses }) => {
       </Header>
       <section className="bg-blue-800 pt-12 pb-24">
         <Container>
-          <div className="flex justify-center text-2xl my-5 space-x-24">
-            <div className="flex justify-between">
+          <div className="flex justify-between text-2xl my-5  mobilecolumn">
+            <div className="flex justify-between mobilecolumn">
               <label className="text-white-100">Filter technology: </label>
               <select
-                className="w-max border-blue-500 border-2 rounded-lg ml-2"
+                className="border-blue-500 border-2 rounded-lg ml-2"
                 onChange={handleChange}
               >
                 <option value="all">All</option>
@@ -61,11 +61,14 @@ const Courses = ({ courses }) => {
                 })}
               </select>
             </div>
-            <select className="w-max border-blue-500 border-2 rounded-lg">
-              <option value="all">All</option>
-              <option value="free">Free</option>
-              <option value="paid">Paid</option>
-            </select>
+            <div className="flex justify-between mobilecolumn">
+              <label className="text-white-100">Category: </label>
+              <select className="border-blue-500 border-2 rounded-lg ml-2">
+                <option value="all">All</option>
+                <option value="free">Free</option>
+                <option value="paid">Paid</option>
+              </select>
+            </div>
           </div>
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 my-10">
             {filteredCourse.map((course) => {

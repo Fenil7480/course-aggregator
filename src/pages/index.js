@@ -31,13 +31,16 @@ export default function Home({ courses }) {
           Get a curated list of the best Web3 courses to get you <br />
           started on your journey.
         </p>
-        <Link href="./courses" target="_blank" rel="noopener noreferrer">
-          <Button>View Courses</Button>
-        </Link>
+
+        <Button>
+          <Link href="./courses" target="_blank" rel="noopener noreferrer">
+            View Courses{" "}
+          </Link>
+        </Button>
       </Header>
       <section className="bg-blue-800 pt-12 pb-24">
         <Container>
-          <FeaturedCourses courses={sortedCourses} />
+          <FeaturedCourses />
         </Container>
       </section>
     </div>

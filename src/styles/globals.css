@@ -29,8 +29,10 @@ h3 {
 
 a {
   color: inherit;
-  font-family: "Audiowide", cursive;
   text-decoration: none;
+}
+nav a {
+  @apply font-cursive;
 }
 
 * {
@@ -104,4 +106,15 @@ header {
   background: url('../../public/interface/squares.svg') no-repeat;
   background-position: 20% 20%;
   background-size: 150px;
+}
+
+@media screen and (max-width: 600px) { 
+  .mobilehide {
+    display: none;
+  }
+  .mobilecolumn
+  {
+   flex-direction: column;
+  }
+
 }
