@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const CourseCard = ({course}) => {
     return (
-        <Link href={"details/"+course.slug} target="_blank" course={course} rel="noopener noreferrer">
+        <Link href={"details/"+course?.slug} target="_blank" course={course} rel="noopener noreferrer">
             <div className='hoverCard flex flex-col bg-white-100 rounded-3xl overflow-hidden cursor-pointer drop-shadow-md hover:drop-shadow-lg duration-300'>
                 <div className='overflow-hidden relative bg-blue-600'>
                     <img className='card-image rounded-tr-3xl opacity-50' src="interface/pattern.svg" alt="Patterned background for course card" />
