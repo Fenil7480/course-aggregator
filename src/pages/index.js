@@ -34,13 +34,13 @@ export default function Home({ courses }) {
 
         <Button>
           <Link href="./courses" target="_blank" rel="noopener noreferrer">
-            View Courses{" "}
+            View Courses
           </Link>
         </Button>
       </Header>
       <section className="bg-blue-800 pt-12 pb-24">
         <Container>
-          <FeaturedCourses />
+          <FeaturedCourses courses={courses} />
         </Container>
       </section>
     </div>
