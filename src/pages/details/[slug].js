@@ -4,7 +4,6 @@ import Header from "../../components/Header";
 import Button from "../../components/button";
 import Container from "../../components/container";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export default function Details({ courses }) {
   const router = useRouter();
