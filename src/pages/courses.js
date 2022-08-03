@@ -4,6 +4,7 @@ import Container from "../components/container";
 import Header from "../components/Header";
 
 const Courses = ({ courses }) => {
+  console.log(courses);
   let coursetech = courses.map((course, index) => {
     let tech = course.technology;
     return tech;
@@ -22,17 +23,14 @@ const Courses = ({ courses }) => {
     setTech(e.target.value);
   };
   const filteredCourse = courses.filter((course) => {
-      let arrayTech = Object.values(course.technology);
-        if (tech === "all") {
-            return course;
-        }
-        else if(arrayTech.includes(tech)){
-            return course;
-        }    
-});
-useEffect(() => {
-}
-, [tech]);
+    let arrayTech = Object.values(course.technology);
+    if (tech === "all") {
+      return course;
+    } else if (arrayTech.includes(tech)) {
+      return course;
+    }
+  });
+  useEffect(() => {}, [tech]);
   return (
     <>
       <Header>
@@ -53,7 +51,7 @@ useEffect(() => {
                 className="w-max border-blue-500 border-2 rounded-lg ml-2"
                 onChange={handleChange}
               >
-                <option value='all'>All</option>
+                <option value="all">All</option>
                 {uniqueTech.map((tech, index) => {
                   return (
                     <option key={index} value={tech}>
@@ -70,15 +68,9 @@ useEffect(() => {
             </select>
           </div>
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 my-10">
-            
             {filteredCourse.map((course) => {
-                return (
-                    <CourseCard
-                        course={course}
-                    />
-                );
-            }
-            )}
+              return <CourseCard course={course} />;
+            })}
           </div>
         </Container>
       </section>
