@@ -20,8 +20,10 @@ const createcourses = function (req, res) {
     res.status(201).json(coursedata);
   });
 };
+
 const deletecourses = function (req, res) {
   const courseid = req.params.courseid;
+  console.log(courseid);
   if (courseid) {
     Coursedetails.findByIdAndRemove(courseid).exec((err, coursedata) => {
       if (err) {

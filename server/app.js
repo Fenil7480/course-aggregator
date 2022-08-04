@@ -20,7 +20,7 @@ mongoose.connection.on("error", function (err) {
 //Ishu added
 const apiRouter = require("./routes/index");
 app.use("/api", (req, res, next) => {
-  console.log(req, 'req');
+  // console.log(req, 'req');
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header(
     "Access-Control-Allow-Headers",

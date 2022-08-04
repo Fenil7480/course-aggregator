@@ -1,6 +1,6 @@
 import React from "react";
 
-const AdminCourseAdd = ({ name, placeHolder,value }) => {
+const AdminCourseAdd = ({ name, placeHolder,value,setValue }) => {
   return (
     <div className="flex flex-col justify-center ">
       <label htmlFor="title" className="font-sans font-bold px-5 py-1">
@@ -12,6 +12,10 @@ const AdminCourseAdd = ({ name, placeHolder,value }) => {
         id="title"
         placeholder={placeHolder}
         value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }
+        }
       />
     </div>
   );
