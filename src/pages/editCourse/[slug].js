@@ -5,7 +5,7 @@ import axios from "axios";
 
 const EditCourse = ({ courses }) => {
   const router = useRouter();
-  
+
   return courses.map((course) => {
     const [titleState, setTitleState] = useState(course.title);
     const [authorState, setAuthorState] = useState(course.author);
@@ -14,7 +14,7 @@ const EditCourse = ({ courses }) => {
     const [descriptionState, setDescriptionState] = useState(course.description);
     const [urlState, setUrlState] = useState(course.url);
     const [ratingState, setRatingState] = useState(course.rating);
-    
+
     const handleSubmit = async (e) => {
       // console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
       console.log(router.query);

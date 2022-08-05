@@ -1,37 +1,45 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Router from 'next/router'
+import Input from '../components/input'
+import Button from '../components/button'
 
 const AdminLogin = () => {
-    const [email,setEmail] = useState('')
-    const [password,setPassword] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email,password);
-        if(email === "admin" && password === "password"){
+        console.log(email, password);
+        if (email === "admin" && password === "password") {
             Router.push('/courseDashboard')
         }
-        else{
+        else {
             // alert('Login Failed')
         }
 
     }
-const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-}
-const handlePasswordChange = (e) => {
-    setPassword(e.target.value)
-}
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
+    }
 
     return (
-        <form onSubmit={handleSubmit} className='flex mt-32 flex-col justify-center w-3/6 m-auto'>
-            <h1 className=''>Administrator Login</h1>
-            <input className='border border-gray-400 py-2 px-5 mt-5 rounded-md' type="text" placeholder='Email Address' onChange={handleEmailChange} />
-            <input className='border border-gray-400 py-2 px-5 mt-5 rounded-md' type="password" placeholder='Password' onChange={handlePasswordChange}/>
-            {email!=="admin" && password!=="password" && <p className='text-lg mt-5'>Please Enter correct username and password</p>}
-            <button className='bg-blue-500 rounded-md px-5 py-2 mt-5 w-fit mb-24' type="submit" onSubmit={handleSubmit}>Login</button>
-            {/* <p>Failed</p> */}
-        </form>
+        <div className='bg-blue-800 flex justify-end bg-squares bg-logo'>
+            <div className='w-1/2 bg-white-100'>
+                <form onSubmit={handleSubmit} className='flex my-16 flex-col justify-center w-3/6 m-auto'>
+                    <h1 className='leading-snug'>Administrator Login</h1>
+                    <Input type="text" placeholder='Email Address' handleInputChange={handleEmailChange} />
+                    <Input type="password" placeholder='Password' handleInputChange={handlePasswordChange} />
+                    {email !== "admin" && password !== "password" && <p className='text-lg text-white-100 my-5 py-2 px-5 rounded-lg bg-red-500'>Please Enter correct username and password</p>}
+                    <div className='pt-5'>
+                        <Button submit onSubmit={handleSubmit}>Login</Button>
+                    </div>
+                    {/* <p>Failed</p> */}
+                </form>
+            </div>
+        </div>
     )
 }
 
