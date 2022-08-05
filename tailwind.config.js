@@ -27,7 +27,7 @@ module.exports = {
         },
         pink: {
           '400': '#FF458B'
-        }
+        },
       }
     },
   },

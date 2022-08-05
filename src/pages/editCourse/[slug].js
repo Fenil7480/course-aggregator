@@ -1,11 +1,12 @@
 import AdminCourseAdd from "../../components/adminCourseAdd";
+import Button from "../../components/button"
 import { useRouter } from "next/router";
 import { useState } from "react";
 import axios from "axios";
 
 const EditCourse = ({ courses }) => {
   const router = useRouter();
-  
+
   return courses.map((course) => {
     const [titleState, setTitleState] = useState(course.title);
     const [authorState, setAuthorState] = useState(course.author);
@@ -14,7 +15,7 @@ const EditCourse = ({ courses }) => {
     const [descriptionState, setDescriptionState] = useState(course.description);
     const [urlState, setUrlState] = useState(course.url);
     const [ratingState, setRatingState] = useState(course.rating);
-    
+
     const handleSubmit = async (e) => {
       // console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
       console.log(router.query);
@@ -45,50 +46,58 @@ const EditCourse = ({ courses }) => {
             placeHolder="Title of the course"
             value={titleState}
             setValue={setTitleState}
+            tooltiptext="The title of the Web3 course."
           />
           <AdminCourseAdd
             name="Author"
             placeHolder="Author of the course"
             value={authorState}
             setValue={setAuthorState}
+            tooltiptext="The person or business that published the Web3 course."
           />
           <AdminCourseAdd
             name="Price"
             placeHolder="Price for the course"
             value={priceState}
             setValue={setPriceState}
+            tooltiptext="The price of the course. If free, input 0."
           />
           <AdminCourseAdd
             name="Technology"
             placeHolder="Technologies this course covers"
             value={technologyState}
             setValue={setTechnologyState}
+            tooltiptext="Three to five technologies this course covers."
           />
           <AdminCourseAdd
             name="Description"
             placeHolder="Description about the course"
             value={descriptionState}
             setValue={setDescriptionState}
+            tooltiptext="The description of the course."
           />
           <AdminCourseAdd
             name="URL"
             placeHolder="URL of the source"
             value={urlState}
             setValue={setUrlState}
+            tooltiptext="The full URL linking back to the course page."
           />
           <AdminCourseAdd
             name="Rating"
             placeHolder="Rating for this course"
             value={ratingState}
             setValue={setRatingState}
+            tooltiptext="The rating for the course out of 5."
           />
-          <button
-            className="bg-blue-500 rounded-md px-5 py-2 mt-5 w-fit mb-24"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Add New Course
-          </button>
+          <div className="mt-5">
+            <Button
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Add New Course
+            </Button>
+          </div>
         </div>
       );
     }

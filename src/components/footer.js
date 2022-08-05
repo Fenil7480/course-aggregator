@@ -1,8 +1,9 @@
+import Container from './container'
 const Footer = () => {
   return (
-    <>
+    <Container>
       <footer className=" p-4 bg-white mx-auto flex flex-wrap justify-center md:justify-between ">
-        <p className="customFont font-normal text-lg block py-2 pr-4 pl-3 text-white rounded text-gray-700 md:p-0 sm:text-center  ">
+        <p className="font-normal text-lg block py-2 text-white rounded text-gray-700 md:p-0 sm:text-center  ">
           &copy; WEB3.0 2022
         </p>
 
@@ -18,7 +19,7 @@ const Footer = () => {
           </a>
         </div>
       </footer>
-    </>
+    </Container>
   );
 };
 export default Footer;
