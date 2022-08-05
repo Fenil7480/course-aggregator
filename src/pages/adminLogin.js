@@ -28,7 +28,7 @@ const AdminLogin = () => {
     return (
         <div className='bg-blue-800 flex justify-end bg-squares bg-logo'>
             <div className='w-1/2 bg-white-100'>
-                <form onSubmit={handleSubmit} className='flex my-16 flex-col justify-center w-3/6 m-auto'>
+                <form onSubmit={handleSubmit} className='flex my-16 flex-col justify-center w-3/6 m-auto gap-5'>
                     <h1 className='leading-snug'>Administrator Login</h1>
                     <Input type="text" placeholder='Email Address' handleInputChange={handleEmailChange} />
                     <Input type="password" placeholder='Password' handleInputChange={handlePasswordChange} />
