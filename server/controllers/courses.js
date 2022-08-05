@@ -22,10 +22,10 @@ const createcourses = function (req, res) {
 };
 
 const deletecourses = function (req, res) {
-  const Courseslug = req.params.courseid;
+  const Courseslug = req.params.Courseslug;
 
-  //console.log('slug',req.params);
-  if (req.params.courseid) {
+  console.log('slug',req.params);
+  if (req.params.Courseslug) {
     Coursedetails.findOneAndDelete({slug:Courseslug}).exec((err, coursedata) => {
       //console.log('data',coursedata);
       if (err) {
