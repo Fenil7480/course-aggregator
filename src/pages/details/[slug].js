@@ -18,19 +18,19 @@ export default function Details({ courses }) {
           </Head>
           <Header blue>
             <h1>{course.title}</h1>
-            <p>{course.rating} | {course.author}</p>
-            <p className="text-xl">{course.price}</p>
+            <p>Rating: {course.rating} | {course.author}</p>
+            <p className="text-xl">${course.price}</p>
             <br></br>
             <a href={course.url} target="_blank">
               <Button>View Course</Button>
             </a>
           </Header>
           <Container>
-            <div className="flex flex-1 flex-col-reverse md:flex-row container">
-              <main className="max-w-3xl">
+            <div className="flex flex-1 flex-col-reverse md:flex-row container md:gap-8">
+              <main className="w-full md:w-2/3 max-w-3xl">
                 <section className="pt-12">
                   <h2>Description</h2>
-                  <p>
+                  <p className="md:text-justify">
                     {course.description}
                   </p>
                   <br></br>
@@ -43,12 +43,12 @@ export default function Details({ courses }) {
                   <Faq />
                 </section>
               </main>
-              <aside className="max-w-xl">
-                <div className="pt-12">
+              <aside className="w-full md:w-1/3 max-w-xl">
+                <div className="pt-12 lg:sticky lg:top-0">
                   <h3>Categories</h3>
-                  <ul className="flex gap-1">
+                  <ul className="flex gap-1 flex-wrap">
                     {course.technology.map((tech) => {
-                        return <li className="px-4 py-2 bg-blue-300 rounded-full text-center" key={tech}>{tech}</li>;
+                        return <li className="px-4 py-2 bg-blue-300 rounded-full text-center whitespace-nowrap" key={tech}>{tech}</li>;
                     })}
                   </ul>
                 </div>
