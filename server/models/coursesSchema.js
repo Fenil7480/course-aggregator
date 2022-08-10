@@ -15,7 +15,7 @@ const coursesSchema = new mongoose.Schema({
     required: true,
   },
   Description: String,
-  Author: {
+  author: {
     type: String,
     required: true,
   },

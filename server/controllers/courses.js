@@ -42,7 +42,7 @@ const deletecourses = function (req, res) {
 const updatecourses=function(req,res)
 {
   const Courseslug = req.params.Courseslug;
-  //console.log('slug Update: ', req.params, Courseslug);
+  console.log('slug Update: ', req.params, Courseslug);
     Coursedetails.findOne({slug:Courseslug})
         .exec((err, coursedata) => {
             console.log("coursedata: ", coursedata);
@@ -57,7 +57,7 @@ const updatecourses=function(req,res)
            
             coursedata.title = req.body.title;
             coursedata.price = req.body.price;
-            coursedata.Author=req.body.Author;
+            coursedata.author=req.body.author;
             coursedata.url=req.body.url;
 
             //console.log("Updated data:", coursedata);
