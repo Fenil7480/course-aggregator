@@ -60,6 +60,7 @@ nav a {
   text-align: left;
   border: none;
   display: block;
+  position: relative;
 }
 
 .accordion__button:hover {
@@ -142,5 +143,15 @@ header,
   .mobilecolumn {
     flex-direction: column;
   }
+
+}
+@media screen and (max-width: 565px) {
+  .accordion__button:after
+  {
+    top: 12px;
+    right: 8px;
+    position: absolute;
+  }
+
 
 }

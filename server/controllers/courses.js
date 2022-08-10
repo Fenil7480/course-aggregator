@@ -27,7 +27,7 @@ const deletecourses = function (req, res) {
   console.log('slug',req.params);
   if (req.params.Courseslug) {
     Coursedetails.findOneAndDelete({slug:Courseslug}).exec((err, coursedata) => {
-      //console.log('data',coursedata);
+      console.log('data',coursedata);
       if (err) {
         res.status(404).json(err);
         return;
@@ -45,7 +45,7 @@ const updatecourses=function(req,res)
   //console.log('slug Update: ', req.params, Courseslug);
     Coursedetails.findOne({slug:Courseslug})
         .exec((err, coursedata) => {
-           // console.log("coursedata: ", coursedata);
+            console.log("coursedata: ", coursedata);
             if (!coursedata) {
                 res
                     .status(404)
