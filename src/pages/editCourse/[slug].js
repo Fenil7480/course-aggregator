@@ -20,7 +20,7 @@ const EditCourse = ({ courses }) => {
       // console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
       console.log(router.query);
       axios
-        .put(`http://localhost:4000/api/courses/${router.query}`, {
+        .put(`http://localhost:4000/api/courses/${router.query.slug}`, {
           title: titleState,
           author: authorState,
           price: priceState,
