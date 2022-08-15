@@ -68,19 +68,12 @@ nav a {
 }
 
 .accordion__button:after {
-  display: inline-block;
   content: "+";
   text-align: right;
   height: 10px;
   float: right;
-
-  /* //width: 100%; */
   margin-left: 12px;
   font-size: 1.5em;
-
-  /* //border: 2px solid currentColor; */
-  /* //border-right: 2px solid currentColor; */
-  /* //transform: rotate(0deg); */
 }
 
 .accordion__button[aria-expanded="true"]::after,
@@ -133,6 +126,22 @@ header,
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+/* Skip to content */
+.skip-to-content-link {
+  @apply bg-blue-800 text-white-100;
+  /* height: 30px; */
+  left: calc(50% - 77.5px);
+  padding: .5rem 8px;
+  position: absolute;
+  transform: translateY(-200%);
+  transition: transform 0.3s;
+}
+
+.skip-to-content-link:focus {
+  @apply border-blue-600 border-2;
+  transform: translateY(0%);
 }
 
 @media screen and (max-width: 600px) {

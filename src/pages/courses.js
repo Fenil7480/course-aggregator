@@ -42,7 +42,7 @@ const Courses = ({ courses }) => {
           </p>
         </div>
       </Header>
-      <section className="bg-blue-800 pt-12 pb-24">
+      <main id="main" className="bg-blue-800 pt-12 pb-24">
         <Container>
           <div className="flex justify-between text-2xl my-5  mobilecolumn">
             <div className="flex justify-between mobilecolumn">
@@ -76,7 +76,7 @@ const Courses = ({ courses }) => {
             })}
           </div>
         </Container>
-      </section>
+      </main>
     </>
   );
 };

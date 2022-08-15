@@ -27,7 +27,7 @@ export default function Details({ courses }) {
           </Header>
           <Container>
             <div className="flex flex-1 flex-col-reverse md:flex-row container md:gap-8">
-              <main className="w-full md:w-2/3 max-w-3xl">
+              <main id="main" className="w-full md:w-2/3 max-w-3xl">
                 <section className="pt-12">
                   <h2>Description</h2>
                   <p className="md:text-justify">

@@ -55,6 +55,9 @@ const Nav = () => {
                 alt="Web 3.0 - A new chapter"
               />
             </a>
+            <a class="skip-to-content-link" href="#main">
+              Skip to content
+            </a>
             <button
               onClick={openMobileNav}
               className="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden "

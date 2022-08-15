@@ -18,7 +18,7 @@ export default function Details() {
             </div>
         </Header>
         <Container>
-            <main className='max-w-3xl'>
+            <main id='main' className='max-w-3xl'>
                 <section className='py-12'>
                     <p className='py-6'>Get quick answers to your Web3 questions.</p>
                     <Faq />
