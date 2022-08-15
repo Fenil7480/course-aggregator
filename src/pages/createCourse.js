@@ -1,10 +1,19 @@
 import styles from "../styles/Home.module.css";
 import AdminCourseAdd from "../components/adminCourseAdd";
 import Button from "../components/button"
+import Link from "next/link"
+
 function createCourse() {
   return (
     <main id="main">
       <div className="flex mt-32 flex-col justify-center w-3/6 m-auto">
+        <Link
+            href="../courseDashboard"
+            target="_blank"
+            rel="noopener noreferrer">
+              <a className="hover:underline hover:text-blue-600 w-fit">	&lsaquo; Back</a>
+            </Link>
+            <h1>Create Course</h1>
         <AdminCourseAdd
           name="Title"
           placeHolder="Title"

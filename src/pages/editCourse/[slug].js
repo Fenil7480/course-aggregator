@@ -3,6 +3,7 @@ import Button from "../../components/button"
 import { useRouter } from "next/router";
 import { useState } from "react";
 import axios from "axios";
+import Link from "next/link"
 
 const EditCourse = ({ courses }) => {
   const router = useRouter();
@@ -42,6 +43,13 @@ const EditCourse = ({ courses }) => {
       return (
         <main id="main">
           <div className="flex mt-32 flex-col justify-center w-3/6 m-auto">
+            <Link
+            href="../courseDashboard"
+            target="_blank"
+            rel="noopener noreferrer">
+              <a className="hover:underline hover:text-blue-600 w-fit">	&lsaquo; Back</a>
+            </Link>
+            <h1>Edit Course</h1>
             <AdminCourseAdd
               name="Title"
               placeHolder="Title of the course"
