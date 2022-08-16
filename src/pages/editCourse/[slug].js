@@ -18,7 +18,7 @@ const EditCourse = ({ courses }) => {
     const [ratingState, setRatingState] = useState(course.rating);
 
     const handleSubmit = async (e) => {
-      // console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
+      console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
       console.log(router.query);
       axios
         .put(`http://localhost:4000/api/courses/${router.query.slug}`, {
