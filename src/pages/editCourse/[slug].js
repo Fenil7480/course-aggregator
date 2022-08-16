@@ -1,8 +1,8 @@
 import AdminCourseAdd from "../../components/adminCourseAdd";
-import Button from "../../components/button"
+import Button from "../../components/button";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 const EditCourse = ({ courses }) => {
   const router = useRouter();
@@ -12,30 +12,40 @@ const EditCourse = ({ courses }) => {
     const [authorState, setAuthorState] = useState(course.author);
     const [priceState, setPriceState] = useState(course.price);
     const [technologyState, setTechnologyState] = useState(course.technology);
-    const [descriptionState, setDescriptionState] = useState(course.description);
+    const [descriptionState, setDescriptionState] = useState(
+      course.description
+    );
     const [urlState, setUrlState] = useState(course.url);
     const [ratingState, setRatingState] = useState(course.rating);
 
     const handleSubmit = async (e) => {
-      // console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
-      console.log(router.query);
-      axios
-        .put(`http://localhost:4000/api/courses/${router.query}`, {
-          title: titleState,
-          author: authorState,
-          price: priceState,
-          technology: technologyState,
-          description: descriptionState,
-          url: urlState,
-          rating: ratingState,
-        })
-        .then((res) => {
-          console.log(res);
-          router.push("/courseDashboard");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      console.log(
+        titleState,
+        authorState,
+        priceState,
+        technologyState,
+        descriptionState,
+        urlState,
+        ratingState
+      );
+      // console.log(router.query);
+      // axios
+      //   .put(`http://localhost:4000/api/courses/${router.query}`, {
+      //     title: titleState,
+      //     author: authorState,
+      //     price: priceState,
+      //     technology: technologyState,
+      //     description: descriptionState,
+      //     url: urlState,
+      //     rating: ratingState,
+      //   })
+      //   .then((res) => {
+      //     console.log(res);
+      //     router.push("/courseDashboard");
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
     };
 
     if (course.slug === router.query.slug) {
@@ -91,10 +101,7 @@ const EditCourse = ({ courses }) => {
             tooltiptext="The rating for the course out of 5."
           />
           <div className="mt-5">
-            <Button
-              type="submit"
-              onClick={handleSubmit}
-            >
+            <Button type="submit" onClick={handleSubmit}>
               Add New Course
             </Button>
           </div>
