@@ -4,11 +4,14 @@ import Container from "../components/container";
 import Header from "../components/Header";
 
 const Courses = ({ courses }) => {
-  console.log(courses);
+  // console.log(courses);
+
+  //for technology filter
   let coursetech = courses.map((course, index) => {
     let tech = course.technology;
     return tech;
   });
+
   var allTech = [];
 
   coursetech.forEach(function (e) {
@@ -17,20 +20,40 @@ const Courses = ({ courses }) => {
     });
   });
   let uniqueTech = [...new Set(allTech)];
-
   const [tech, setTech] = useState("all");
   const handleChange = (e) => {
     setTech(e.target.value);
   };
+  // for price filter
+  const currentPrice = "";
+  const [price, setPrice] = useState("all");
+  let handlingChange = (e) => {
+    setPrice(e.target.value);
+    console.log("setprice", setPrice);
+    currentPrice = e.target.value;
+    console.log("CUrrent price " + currentPrice);
+  };
+  console.log("price " + price);
+
   const filteredCourse = courses.filter((course) => {
     let arrayTech = Object.values(course.technology);
-    if (tech === "all") {
+    let arrayPrice = Object.values(course.price);
+    console.log("course", course.price);
+
+    console.log("array price ", arrayPrice);
+    // console.log("array tech ", arrayTech);
+    if (tech === "all" && price == "all") {
       return course;
     } else if (arrayTech.includes(tech)) {
+      return course;
+    } else if (price === "free" && course.price === 0) {
+      return course;
+    } else if (price === "paid" && course.price !== 0) {
       return course;
     }
   });
   useEffect(() => {}, [tech]);
+  useEffect(() => {}, [price]);
   return (
     <>
       <Header>
@@ -63,10 +86,16 @@ const Courses = ({ courses }) => {
             </div>
             <div className="flex justify-between mobilecolumn">
               <label className="text-white-100">Category: </label>
-              <select className="border-blue-500 border-2 rounded-lg ml-2">
+              <select
+                className="border-blue-500 border-2 rounded-lg ml-2"
+                onChange={handlingChange}
+              >
                 <option value="all">All</option>
                 <option value="free">Free</option>
                 <option value="paid">Paid</option>
+                {/* {courses.map((price) => (
+                  <option value={price.price}>{price.price}</option>
+                ))} */}
               </select>
             </div>
           </div>
