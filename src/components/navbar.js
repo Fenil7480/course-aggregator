@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import Container from '../components/container'
 import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 const Nav = () => {
   const mobileMenu = useRef(null);
@@ -26,11 +27,11 @@ const Nav = () => {
     links = [
       {
         name: 'Admin',
-        link: "",
+        link: ""
       },
       {
         name: 'Logout',
-        link: "",
+        link: ""
       },
     ]
   }
@@ -55,7 +56,7 @@ const Nav = () => {
                 alt="Web 3.0 - A new chapter"
               />
             </a>
-            <a class="skip-to-content-link" href="#main">
+            <a className="skip-to-content-link" href="#main">
               Skip to content
             </a>
             <button
@@ -68,9 +69,9 @@ const Nav = () => {
               <svg
                 aria-hidden="true"
                 fill="black" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.5 24C39.5 23.1716 38.8284 22.5 38 22.5H10C9.17157 22.5 8.5 23.1716 8.5 24C8.5 24.8284 9.17157 25.5 10 25.5H38C38.8284 25.5 39.5 24.8284 39.5 24Z" fill="black" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.5 14C39.5 13.1716 38.8284 12.5 38 12.5H10C9.17157 12.5 8.5 13.1716 8.5 14C8.5 14.8284 9.17157 15.5 10 15.5H38C38.8284 15.5 39.5 14.8284 39.5 14Z" fill="black" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.5 34C39.5 33.1716 38.8284 32.5 38 32.5H10C9.17157 32.5 8.5 33.1716 8.5 34C8.5 34.8284 9.17157 35.5 10 35.5H38C38.8284 35.5 39.5 34.8284 39.5 34Z" fill="black" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M39.5 24C39.5 23.1716 38.8284 22.5 38 22.5H10C9.17157 22.5 8.5 23.1716 8.5 24C8.5 24.8284 9.17157 25.5 10 25.5H38C38.8284 25.5 39.5 24.8284 39.5 24Z" fill="black" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M39.5 14C39.5 13.1716 38.8284 12.5 38 12.5H10C9.17157 12.5 8.5 13.1716 8.5 14C8.5 14.8284 9.17157 15.5 10 15.5H38C38.8284 15.5 39.5 14.8284 39.5 14Z" fill="black" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M39.5 34C39.5 33.1716 38.8284 32.5 38 32.5H10C9.17157 32.5 8.5 33.1716 8.5 34C8.5 34.8284 9.17157 35.5 10 35.5H38C38.8284 35.5 39.5 34.8284 39.5 34Z" fill="black" />
               </svg>
 
             </button>
@@ -105,8 +106,8 @@ const Nav = () => {
           })}
           <button onClick={closeMobileNav}>
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16.9289 31.0711L31.071 16.929" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
-              <path d="M16.9289 16.9289L31.071 31.071" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M16.9289 31.0711L31.071 16.929" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M16.9289 16.9289L31.071 31.071" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </button>
         </ul>

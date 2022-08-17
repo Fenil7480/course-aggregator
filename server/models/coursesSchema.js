@@ -14,7 +14,9 @@ const coursesSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  Description: String,
+  description: {
+    type: String,
+  },
   author: {
     type: String,
     required: true,

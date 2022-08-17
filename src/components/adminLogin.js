@@ -1,6 +1,7 @@
 import React from 'react'
 
 const AdminLogin = () => {
+  
   return (
     <div className='flex mt-32 flex-col justify-center w-3/6 m-auto'>
       <h1 className=''>Administrator Login</h1>

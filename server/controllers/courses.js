@@ -59,6 +59,10 @@ const updatecourses=function(req,res)
             coursedata.price = req.body.price;
             coursedata.author=req.body.author;
             coursedata.url=req.body.url;
+            coursedata.technology=req.body.technology;
+            coursedata.description=req.body.description;
+            coursedata.rating=req.body.rating;
+            
 
             //console.log("Updated data:", coursedata);
             coursedata.save((err, coursedata) => {
