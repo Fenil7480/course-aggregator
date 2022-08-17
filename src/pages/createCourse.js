@@ -19,7 +19,7 @@ function createCourse() {
   const handleSubmit = async (e) => {
     console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
     axios
-      .post("http://localhost:4000/api/courses", {
+      .post(`${process.env.API_HOST}/courses`, {
         title: titleState,
         author: authorState,
         price: priceState,

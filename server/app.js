@@ -30,4 +30,5 @@ app.use("/api", (req, res, next) => {
   next();
 });
 app.use("/api", apiRouter);
-app.listen(4000, console.log("Server started"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, console.log("Server started"));
