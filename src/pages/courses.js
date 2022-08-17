@@ -4,13 +4,13 @@ import Container from "../components/container";
 import Header from "../components/Header";
 
 const Courses = ({ courses }) => {
-  // console.log(courses);
 
   //for technology filter
   let coursetech = courses.map((course, index) => {
     let tech = course.technology;
     return tech;
   });
+  console.log(coursetech);
 
   var allTech = [];
 
@@ -24,23 +24,24 @@ const Courses = ({ courses }) => {
   const handleChange = (e) => {
     setTech(e.target.value);
   };
+
   // for price filter
   const currentPrice = "";
   const [price, setPrice] = useState("all");
   let handlingChange = (e) => {
     setPrice(e.target.value);
-    console.log("setprice", setPrice);
+    // console.log("setprice", setPrice);
     currentPrice = e.target.value;
-    console.log("CUrrent price " + currentPrice);
+    // console.log("CUrrent price " + currentPrice);
   };
-  console.log("price " + price);
+  // console.log("price " + price);
 
   const filteredCourse = courses.filter((course) => {
     let arrayTech = Object.values(course.technology);
     let arrayPrice = Object.values(course.price);
-    console.log("course", course.price);
+    // console.log("course", course.price);
 
-    console.log("array price ", arrayPrice);
+    // console.log("array price ", arrayPrice);
     // console.log("array tech ", arrayTech);
     if (tech === "all" && price == "all") {
       return course;
