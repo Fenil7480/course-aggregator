@@ -32,7 +32,7 @@ const EditCourse = ({ courses }) => {
       );
       console.log(router.query);
       axios
-        .put(`http://localhost:4000/api/courses/${router.query.slug}`, {
+        .put(`${process.env.API_HOST}/courses/${router.query.slug}`, {
           title: titleState,
           author: authorState,
           price: priceState,
@@ -126,7 +126,7 @@ const EditCourse = ({ courses }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:4000/api/courses");
+  const res = await fetch(`${process.env.API_HOST}/courses`);
   const courses = await res.json();
   return {
     props: {
@@ -136,7 +136,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:4000/api/courses");
+  const res = await fetch(`${process.env.API_HOST}/courses`);
   const courses = await res.json();
   return {
     paths: courses.map((course) => ({
