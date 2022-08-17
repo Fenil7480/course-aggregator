@@ -9,7 +9,7 @@ const CourseRow = (course) => {
     const deleteCourse = () => {
         myRefname.current.focus();
         console.log(course.slug);
-        axios.delete(`http://localhost:4000/api/courses/${course.slug}`)
+        axios.delete(`${process.env.API_HOST}/courses/${course.slug}`)
             .then((res) => {
                 console.log(res);
                 router.push("/courseDashboard");

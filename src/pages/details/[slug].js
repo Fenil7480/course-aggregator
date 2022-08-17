@@ -61,7 +61,7 @@ export default function Details({ courses }) {
   });
 }
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:4000/api/courses");
+  const res = await fetch(`${process.env.API_HOST}/courses`);
   const courses = await res.json();
   return {
     props: {
@@ -71,7 +71,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:4000/api/courses");
+  const res = await fetch(`${process.env.API_HOST}/courses`);
   const courses = await res.json();
   return {
     paths: courses.map((course) => ({

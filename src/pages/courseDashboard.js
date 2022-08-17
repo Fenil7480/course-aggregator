@@ -72,7 +72,7 @@ const CourseDashboard = ({ courses }) => {
 }
 
 export async function getStaticProps() {
-    const res = await fetch('http://localhost:4000/api/courses')
+    const res = await fetch(`${process.env.API_HOST}/courses`)
     const courses = await res.json()
     return {
         props: {
