@@ -38,11 +38,11 @@ export default function Home({ courses }) {
           </Link>
         </Button>
       </Header>
-      <section className="bg-blue-800 pt-12 pb-24">
+      <main id="main" className="bg-blue-800 pt-12 pb-24">
         <Container>
           <FeaturedCourses courses={courses} />
         </Container>
-      </section>
+      </main>
     </div>
   );
 }

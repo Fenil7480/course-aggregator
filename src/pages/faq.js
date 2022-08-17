@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Faq from '../components/faq'
 import Header from '../components/Header'
+import Container from '../components/container'
 
 export default function Details() {
     return (
@@ -16,14 +17,14 @@ export default function Details() {
                 <p className='text-xl mb-8'>Learn more about Web3 with our FAQ section.</p>
             </div>
         </Header>
-        <div className='container mx-auto px-8 lg:px-16'>
-            <main className='max-w-3xl'>
+        <Container>
+            <main id='main' className='max-w-3xl'>
                 <section className='py-12'>
                     <p className='py-6'>Get quick answers to your Web3 questions.</p>
                     <Faq />
                 </section>
             </main>
-        </div>
+        </Container>
     </>
     )
 }
