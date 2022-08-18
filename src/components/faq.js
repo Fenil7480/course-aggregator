@@ -35,13 +35,13 @@ const Faq = () => {
           </AccordionItemHeading>
           <AccordionItemPanel>
             <p>
-              It's possible that getting regulated to compete against big tech
+              It&apos;s possible that getting regulated to compete against big tech
               companies, or to make those companies more accountable for
               mistakes, could make the internet better. In this context, a
               decentralized network is a tangible plus.
             </p>
             <p>
-              For artists, musicians, and other creators, it's also possible
+              For artists, musicians, and other creators, it&apos;s also possible
               that a direct-consumer relationship is actually better than, for
               example, Spotify, which has been criticized for not paying artists
               enough. Similar issues exist with Instagram and Reddit, both hubs
@@ -185,7 +185,7 @@ const Faq = () => {
         </AccordionItem>
         <AccordionItem>
           <AccordionItemHeading>
-            <AccordionItemButton>Are there locations where I can't take this course?</AccordionItemButton>
+            <AccordionItemButton>Are there locations where I can&apos;t take this course?</AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
             <p>

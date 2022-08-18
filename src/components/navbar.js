@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import Container from '../components/container'
 import { useRouter } from "next/router";
-import Cookies from "js-cookie";
+import Image from "next/image";
 
 const Nav = () => {
   const mobileMenu = useRef(null);
@@ -49,13 +49,15 @@ const Nav = () => {
       <nav className="px-2 bg-white border-gray-200  shadow-lg ">
         <Container>
           <div className="container flex flex-wrap justify-between items-center mx-auto">
-            <a href="/" className="flex items-center">
-              <img
-                src="logo.png"
+            <Link href="/">
+            <a className="flex items-center">
+              <Image
+                src="/logo.png"
                 className="mr-3 h-20"
                 alt="Web 3.0 - A new chapter"
               />
             </a>
+              </Link>
             <a className="skip-to-content-link" href="#main">
               Skip to content
             </a>
@@ -97,7 +99,7 @@ const Nav = () => {
         <ul className="text-white-100 flex flex-col h-full items-center justify-center gap-5">
           {links.map((link) => {
             return (
-              <li>
+              <li key={link.name}>
                 <Link href={link.link}>
                   <a onClick={closeMobileNav}>{link.name}</a>
                 </Link>
