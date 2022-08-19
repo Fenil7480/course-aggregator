@@ -21,7 +21,7 @@ export default function Details({ courses }) {
             <p>Rating: {course.rating} | {course.author}</p>
             <p className="text-xl">${course.price}</p>
             <br></br>
-            <a href={course.url} target="_blank">
+            <a href={course.url} target="_blank" rel="noopener noreferrer">
               <Button>View Course</Button>
             </a>
           </Header>
@@ -34,7 +34,7 @@ export default function Details({ courses }) {
                     {course.description}
                   </p>
                   <br></br>
-                  <a href={course.url} target="_blank">
+                  <a href={course.url} target="_blank" rel="noopener noreferrer">
                     <Button>View Course</Button>
                   </a>
                 </section>

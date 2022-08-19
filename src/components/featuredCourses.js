@@ -1,8 +1,4 @@
-// import FeaturedCourse from "./featuredCourse";
 import CourseCard from "./courseCard";
-// import CourseCard from "../components/courseCard";
-import Container from "../components/container";
-import Header from "../components/Header";
 
 function FeaturedCourses(courses) {
   console.log("courses:", courses);

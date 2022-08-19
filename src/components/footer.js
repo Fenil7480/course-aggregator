@@ -1,4 +1,6 @@
 import Container from './container'
+import Image from 'next/image';
+
 const Footer = () => {
   return (
     <Container>
@@ -8,14 +10,14 @@ const Footer = () => {
         </p>
 
         <div className="flex flex-wrap items-center px-3">
-          <a href="https://www.facebook.com/" target="_blank">
-            <img src="f.png" className="h-10 ml-2" />
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <Image src="/f.png" className="h-10 ml-2" alt='facebook' />
           </a>
-          <a href="https://www.instagram.com/" target="_blank">
-            <img src="i.jpg" className="h-10 ml-2" />
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <Image src="/i.jpg" className="h-10 ml-2" alt='instagram' />
           </a>
-          <a href="https://twitter.com/?lang=en-ca" target="_blank">
-            <img src="t.jpg" className="h-10 ml-2" />
+          <a href="https://twitter.com/?lang=en-ca" target="_blank" rel="noopener noreferrer">
+            <Image src="/t.jpg" className="h-10 ml-2" alt='twitter' />
           </a>
         </div>
       </footer>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Image from "next/image";
 
 function AboutPartHome()
 {
@@ -6,7 +7,7 @@ function AboutPartHome()
         <section className="bg-white-400 pb-8 text-gray-700">
         <div className="flex justify-center flex-wrap">
             <div className="flex flex-col items-center p-8 bg-white shadow-lg rounded mx-8 mb-8 flex-1 mb-8 md:mb-0  md:w-1/3 sm:flex-initial">
-              <img
+              <Image
                 // src="https://images.unsplash.com/photo-1581247227572-360cf3d83e00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
                 src="/images/img_2.jpg"
                 className="rounded-full h-32 w-32 "

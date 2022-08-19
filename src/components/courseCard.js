@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const CourseCard = ({ course }) => {
   return (
@@ -12,9 +13,9 @@ const CourseCard = ({ course }) => {
       <a className="flex">
       <div className="hoverCard bg-white-100 rounded-3xl overflow-hidden cursor-pointer drop-shadow-md hover:drop-shadow-lg duration-300">
         <div className="overflow-hidden relative bg-blue-600">
-          <img
+          <Image
             className="card-image rounded-tr-3xl opacity-50"
-            src="interface/pattern.svg"
+            src="/interface/pattern.svg"
             alt="Patterned background for course card"
           />
           <p className="p-4 font-bold text-white-100 absolute bottom-0 text-lg sm:text-xl leading-relaxed sm:leading-relaxed">

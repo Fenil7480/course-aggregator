@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AdminCourseAdd from "../components/adminCourseAdd";
 import Button from "../components/button";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
 
-function createCourse() {
+const CreateCourse = () => {
   const router = useRouter();
 
   const [titleState, setTitleState] = useState("");
@@ -17,7 +17,6 @@ function createCourse() {
   const [ratingState, setRatingState] = useState("");
 
   const handleSubmit = async (e) => {
-    console.log(titleState, authorState, priceState, technologyState, descriptionState, urlState, ratingState);
     axios
       .post(`${process.env.API_HOST}/courses`, {
         title: titleState,
@@ -110,6 +109,6 @@ function createCourse() {
       </div>
     </main>
   );
-}
+};
 
-export default createCourse;
+export default CreateCourse;
