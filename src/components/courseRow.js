@@ -3,20 +3,20 @@ import axios from "axios";
 import React, {useRef} from 'react';
 import {useRouter} from 'next/router';
 
-const CourseRow = (course) => {
+const CourseRow = (course,api_url) => {
     const router = useRouter();
     const myRefname= useRef(null);
     const deleteCourse = () => {
         myRefname.current.focus();
         console.log(course.slug);
-        axios.delete(`${process.env.API_HOST}/courses/${course.slug}`)
+        axios.delete(`${api_url}/${course.slug}`)
             .then((res) => {
                 console.log(res);
                 router.push("/courseDashboard");
             }
 
             ).catch((err) => {
-                console.log(err);
+                console.log(err.response.data);
             }
             );
         }
@@ -31,3 +31,12 @@ const CourseRow = (course) => {
 }
 
 export default CourseRow
+
+// export async function getStaticProps() {
+//     const api_url = process.env.API_HOST;
+//     return {
+//       props: {
+//         api_url,
+//       },
+//     };
+//   }

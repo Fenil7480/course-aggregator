@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import Link from "next/link"
 
-export default function EditCourse({ courses }) {
+export default function EditCourse({ courses,api_url }) {
   const router = useRouter();
   // console.log(router.query.slug);
   return courses.map((course) => {
@@ -21,7 +21,7 @@ export default function EditCourse({ courses }) {
    const [ratingState, setRatingState] = useState(course.rating);
   const handleSubmit = async (e) => {
     axios
-    .put(`${process.env.API_HOST}/courses/${router.query.slug}`, {
+    .put(`${api_url}/courses/${router.query.slug}`, {
       title: titleState,
       author: authorState,
       price: priceState,
@@ -115,11 +115,13 @@ export default function EditCourse({ courses }) {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_HOST}/courses`);
+  const api_url = process.env.API_HOST;
+  const res = await fetch(`${api_url}/courses`);
   const courses = await res.json();
   return {
     props: {
       courses,
+      api_url,
     },
   };
 }

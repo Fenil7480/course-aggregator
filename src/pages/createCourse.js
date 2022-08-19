@@ -5,8 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
 
-const CreateCourse = () => {
+const CreateCourse = ({api_url}) => {
   const router = useRouter();
+  // const api_url = process.env.API_HOST
 
   const [titleState, setTitleState] = useState("");
   const [authorState, setAuthorState] = useState("");
@@ -17,8 +18,9 @@ const CreateCourse = () => {
   const [ratingState, setRatingState] = useState("");
 
   const handleSubmit = async (e) => {
+    console.log("submit");
     axios
-      .post(`${process.env.API_HOST}/courses`, {
+      .post(`${api_url}/courses`, {
         title: titleState,
         author: authorState,
         price: priceState,
@@ -34,7 +36,7 @@ const CreateCourse = () => {
         router.push("/courseDashboard");
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
   };
 
@@ -112,3 +114,12 @@ const CreateCourse = () => {
 };
 
 export default CreateCourse;
+
+export async function getStaticProps() {
+  const api_url = process.env.API_HOST;
+  return {
+    props: {
+      api_url,
+    },
+  };
+}

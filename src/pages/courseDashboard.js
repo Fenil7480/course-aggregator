@@ -5,7 +5,7 @@ import Button from '../components/button'
 // import { useRouter } from "next/router";
 // import { useEffect } from "react";
 
-const CourseDashboard = ({ courses }) => {
+const CourseDashboard = ({ courses,api_url }) => {
 
 //   const router = useRouter();
 
@@ -62,7 +62,7 @@ const CourseDashboard = ({ courses }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {courses.map(course => <CourseRow key={course.id} {...course} />)}
+                            {courses.map(course => <CourseRow key={course.id} api_url={api_url} {...course} />)}
                         </tbody>
                     </table>
                 </div>
@@ -72,11 +72,13 @@ const CourseDashboard = ({ courses }) => {
 }
 
 export async function getStaticProps() {
-    const res = await fetch(`${process.env.API_HOST}/courses`)
+    const api_url = process.env.API_HOST;
+    const res = await fetch(`${api_url}/courses`)
     const courses = await res.json()
     return {
         props: {
-            courses
+            courses,
+            api_url
         },
     }
 }
