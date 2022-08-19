@@ -9,6 +9,7 @@ import Button from "../components/button";
 import Container from "../components/container";
 import Link from "next/link";
 
+
 // import AboutPartHome from '../components/AboutPartHome';
 // import Carousal from '../components/Carousal';
 

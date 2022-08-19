@@ -6,36 +6,37 @@ import axios from "axios";
 import Link from "next/link"
 
 export default function EditCourse({ courses }) {
-   courses.map((course) => {
+  const router = useRouter();
+  // console.log(router.query.slug);
+  return courses.map((course) => {
+    // console.log(course.slug);
     const [titleState, setTitleState] = useState(course.title);
     const [authorState, setAuthorState] = useState(course.author);
     const [priceState, setPriceState] = useState(course.price);
-    const [technologyState, setTechnologyState] = useState(course.technology);
-    const [descriptionState, setDescriptionState] = useState(
-      course.description
-    );
-    const [urlState, setUrlState] = useState(course.url);
-    const [ratingState, setRatingState] = useState(course.rating);
-
-  const router = useRouter();
+   const [technologyState, setTechnologyState] = useState(course.technology);
+   const [descriptionState, setDescriptionState] = useState(
+     course.description
+   );
+   const [urlState, setUrlState] = useState(course.url);
+   const [ratingState, setRatingState] = useState(course.rating);
   const handleSubmit = async (e) => {
     axios
-      .put(`${process.env.API_HOST}/courses/${router.query.slug}`, {
-        title: titleState,
-        author: authorState,
-        price: priceState,
-        technology: technologyState,
-        description: descriptionState,
-        url: urlState,
-        rating: ratingState,
-      })
-      .then((res) => {
-        console.log(res);
-        router.push("/courseDashboard");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    .put(`${process.env.API_HOST}/courses/${router.query.slug}`, {
+      title: titleState,
+      author: authorState,
+      price: priceState,
+      technology: technologyState,
+      description: descriptionState,
+      url: urlState,
+      rating: ratingState,
+    })
+    .then((res) => {
+      console.log(res);
+      router.push("/courseDashboard");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   };
   
   if (course.slug === router.query.slug) {
