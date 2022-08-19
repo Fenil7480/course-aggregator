@@ -11,13 +11,13 @@ const Footer = () => {
 
         <div className="flex flex-wrap items-center px-3">
           <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-            <Image src="/f.png" className="h-10 ml-2" alt='facebook' />
+            <Image width={40} height={40} src="/f.png" className="h-10 ml-2 w-10" alt='facebook' />
           </a>
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-            <Image src="/i.jpg" className="h-10 ml-2" alt='instagram' />
+            <Image width={40} height={40} src="/i.jpg" className="h-10 ml-2 w-10" alt='instagram' />
           </a>
           <a href="https://twitter.com/?lang=en-ca" target="_blank" rel="noopener noreferrer">
-            <Image src="/t.jpg" className="h-10 ml-2" alt='twitter' />
+            <Image width={40} height={40} src="/t.jpg" className="h-10 ml-2 w-10" alt='twitter' />
           </a>
         </div>
       </footer>

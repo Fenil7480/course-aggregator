@@ -53,8 +53,10 @@ const Nav = () => {
             <a className="flex items-center">
               <Image
                 src="/logo.png"
-                className="mr-3 h-20"
+                className="mr-3 h-20 w-full"
                 alt="Web 3.0 - A new chapter"
+                width={202}
+                height={80}
               />
             </a>
               </Link>

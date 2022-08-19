@@ -20,7 +20,7 @@ export default function EditCourse({ courses }) {
   const router = useRouter();
   const handleSubmit = async (e) => {
     axios
-      .put(`http://localhost:4000/api/courses/${router.query.slug}`, {
+      .put(`${process.env.API_HOST}/courses/${router.query.slug}`, {
         title: titleState,
         author: authorState,
         price: priceState,

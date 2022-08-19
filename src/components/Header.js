@@ -10,7 +10,7 @@ const Header = ({blue, children}) => {
                 {children}
             </Container>
             <div className={`headerDivider w-4/12 h-16 rounded-tl-full absolute right-0 bottom-0 ${blue ? "bg-white-100" : "bg-blue-800"}`}></div>
-            <Image alt='squares2' className='absolute bottom-0 right-6 h-32 w-auto mobilehide' src='/interface/squares2.svg' />
+            <img width={191} height={128} alt='squares2' className='absolute bottom-0 right-6 h-32 w-auto mobilehide' src='/interface/squares2.svg' />
         </header>
     )
 }

@@ -17,6 +17,8 @@ const CourseCard = ({ course }) => {
             className="card-image rounded-tr-3xl opacity-50"
             src="/interface/pattern.svg"
             alt="Patterned background for course card"
+            width={450}
+            height={200}
           />
           <p className="p-4 font-bold text-white-100 absolute bottom-0 text-lg sm:text-xl leading-relaxed sm:leading-relaxed">
             {course?.technology.map((val, index) =>
