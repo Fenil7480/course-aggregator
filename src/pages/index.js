@@ -1,14 +1,13 @@
 // import logo from './logo.svg';
 // import './App.css';
 // import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import FeaturedCourses from "../components/featuredCourses";
-import Banner from "../components/banner";
-import Header from "../components/Header";
-import Button from "../components/button";
-import Container from "../components/container";
-import Link from "next/link";
-
+import styles from '../styles/Home.module.css';
+import FeaturedCourses from '../components/featuredCourses';
+import Banner from '../components/banner';
+import Header from '../components/Header';
+import Button from '../components/button';
+import Container from '../components/container';
+import Link from 'next/link';
 
 // import AboutPartHome from '../components/AboutPartHome';
 // import Carousal from '../components/Carousal';
@@ -23,23 +22,23 @@ export default function Home({ courses }) {
   // console.log("After sorting course:", courses);
   let sortedCourses = courses;
   return (
-    <div className="App">
+    <div className='App'>
       <Header>
         <h1>
-          Your ticket into <span className="text-blue-600">Web3</span> is here!
+          Your ticket into <span className='text-blue-600'>Web3</span> is here!
         </h1>
-        <p className="text-xl mb-8">
+        <p className='text-xl mb-8'>
           Get a curated list of the best Web3 courses to get you <br />
           started on your journey.
         </p>
 
         <Button>
-          <Link href="./courses" target="_blank" rel="noopener noreferrer">
+          <Link href='./courses' target='_blank' rel='noopener noreferrer'>
             View Courses
           </Link>
         </Button>
       </Header>
-      <main id="main" className="bg-blue-800 pt-12 pb-24">
+      <main id='main' className='bg-blue-800 pt-12 pb-24'>
         <Container>
           <FeaturedCourses courses={courses} />
         </Container>
@@ -52,7 +51,7 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await fetch(`${process.env.API_HOST}/courses`);
-  console.log("printing res" + res);
+  console.log('printing res' + res);
   const courses = await res.json();
 
   // By returning { props: { posts } }, the Blog component
