@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 var mongoose = require('mongoose');
+require('dotenv').config();
 
 const dbURI =
   'mongodb+srv://admin:admin@cluster0.lwhswfn.mongodb.net/?retryWrites=true&w=majority';
