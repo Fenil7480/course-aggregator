@@ -116,7 +116,7 @@ export default function EditCourse({ courses, api_url }) {
 }
 
 export async function getStaticProps() {
-  const api_url = process.env.API_HOST;
+  const api_url = 'https://web3-courses.herokuapp.com/api';
   const res = await fetch(`${api_url}/courses`);
   const courses = await res.json();
   return {
@@ -128,7 +128,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.API_HOST}/courses`);
+  const res = await fetch(`https://web3-courses.herokuapp.com/api/courses`);
   const courses = await res.json();
   return {
     paths: courses.map((course) => ({

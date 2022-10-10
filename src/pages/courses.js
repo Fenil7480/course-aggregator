@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import CourseCard from "../components/courseCard";
-import Container from "../components/container";
-import Header from "../components/Header";
+import React, { useState, useEffect } from 'react';
+import CourseCard from '../components/courseCard';
+import Container from '../components/container';
+import Header from '../components/Header';
 
 const Courses = ({ courses }) => {
-
   //for technology filter
   let coursetech = courses.map((course, index) => {
     let tech = course.technology;
@@ -20,14 +19,14 @@ const Courses = ({ courses }) => {
     });
   });
   let uniqueTech = [...new Set(allTech)];
-  const [tech, setTech] = useState("all");
+  const [tech, setTech] = useState('all');
   const handleChange = (e) => {
     setTech(e.target.value);
   };
 
   // for price filter
-  const currentPrice = "";
-  const [price, setPrice] = useState("all");
+  const currentPrice = '';
+  const [price, setPrice] = useState('all');
   let handlingChange = (e) => {
     setPrice(e.target.value);
     // console.log("setprice", setPrice);
@@ -43,13 +42,13 @@ const Courses = ({ courses }) => {
 
     // console.log("array price ", arrayPrice);
     // console.log("array tech ", arrayTech);
-    if (tech === "all" && price == "all") {
+    if (tech === 'all' && price == 'all') {
       return course;
     } else if (arrayTech.includes(tech)) {
       return course;
-    } else if (price === "free" && course.price === 0) {
+    } else if (price === 'free' && course.price === 0) {
       return course;
-    } else if (price === "paid" && course.price !== 0) {
+    } else if (price === 'paid' && course.price !== 0) {
       return course;
     }
   });
@@ -58,24 +57,24 @@ const Courses = ({ courses }) => {
   return (
     <>
       <Header>
-        <div className="py-12">
+        <div className='py-12'>
           <h1>Courses</h1>
-          <p className="text-xl mb-8">
+          <p className='text-xl mb-8'>
             Get a curated list of the best Web3 courses to get you <br />
-            started on your journey.{" "}
+            started on your journey.{' '}
           </p>
         </div>
       </Header>
-      <main id="main" className="bg-blue-800 pt-12 pb-24">
+      <main id='main' className='bg-blue-800 pt-12 pb-24'>
         <Container>
-          <div className="flex justify-between text-2xl my-5  mobilecolumn">
-            <div className="flex justify-between mobilecolumn">
-              <label className="text-white-100">Filter technology: </label>
+          <div className='flex justify-between text-2xl my-5  mobilecolumn'>
+            <div className='flex justify-between mobilecolumn'>
+              <label className='text-white-100'>Filter technology: </label>
               <select
-                className="border-blue-500 border-2 rounded-lg ml-2"
+                className='border-blue-500 border-2 rounded-lg ml-2'
                 onChange={handleChange}
               >
-                <option value="all">All</option>
+                <option value='all'>All</option>
                 {uniqueTech.map((tech, index) => {
                   return (
                     <option key={index} value={tech}>
@@ -85,22 +84,22 @@ const Courses = ({ courses }) => {
                 })}
               </select>
             </div>
-            <div className="flex justify-between mobilecolumn">
-              <label className="text-white-100">Category: </label>
+            <div className='flex justify-between mobilecolumn'>
+              <label className='text-white-100'>Category: </label>
               <select
-                className="border-blue-500 border-2 rounded-lg ml-2"
+                className='border-blue-500 border-2 rounded-lg ml-2'
                 onChange={handlingChange}
               >
-                <option value="all">All</option>
-                <option value="free">Free</option>
-                <option value="paid">Paid</option>
+                <option value='all'>All</option>
+                <option value='free'>Free</option>
+                <option value='paid'>Paid</option>
                 {/* {courses.map((price) => (
                   <option value={price.price}>{price.price}</option>
                 ))} */}
               </select>
             </div>
           </div>
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 my-10">
+          <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 my-10'>
             {filteredCourse.map((course) => {
               return <CourseCard key={course._id} course={course} />;
             })}
@@ -117,7 +116,7 @@ const Courses = ({ courses }) => {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch(`${process.env.API_HOST}/courses`);
+  const res = await fetch(`https://web3-courses.herokuapp.com/api/courses`);
   const courses = await res.json();
 
   // By returning { props: { posts } }, the Blog component

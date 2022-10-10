@@ -70,7 +70,8 @@ const CourseDashboard = ({ courses, api_url }) => {
 };
 
 export async function getStaticProps() {
-  const api_url = process.env.API_HOST;
+  const api_url = 'https://web3-courses.herokuapp.com/api';
+
   const res = await fetch(`${api_url}/courses`);
   const courses = await res.json();
   return {
